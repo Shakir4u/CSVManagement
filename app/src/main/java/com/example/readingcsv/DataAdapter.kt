@@ -7,6 +7,8 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.readingcsv.models.DataModel
+import com.example.readingcsv.models.JsonModel
+import com.google.gson.Gson
 
 class DataAdapter(var context:Context, var listData: List<DataModel>):
     RecyclerView.Adapter<DataAdapter.DataViewHolder>() {
@@ -20,7 +22,8 @@ class DataAdapter(var context:Context, var listData: List<DataModel>):
     }
 
     override fun onBindViewHolder(holder: DataViewHolder, position: Int) {
-        holder.tvData.text=listData.get(position).toString()
+        val dataModel=listData.get(position)
+        holder.tvData.text=dataModel.toString()
     }
 
     override fun getItemCount(): Int {

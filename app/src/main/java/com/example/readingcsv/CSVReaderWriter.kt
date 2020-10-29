@@ -45,7 +45,7 @@ class CSVReaderWriter{
                 data?.let {
                     val model=DataModel(
                         if (data.get(0).isDigitsOnly()) data.get(0).toInt() else -1,
-                        data.get(1),
+                        data.get(1)+","+data.get(2)+","+data.get(3)+","+data.get(4)+","+data.get(5)+","+data.get(6),
                         data.get(7).toBoolean(),
                         if (data.get(8).isDigitsOnly()) data.get(8).toInt() else -1,
                     )
